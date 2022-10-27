@@ -24,12 +24,13 @@ const showRecipe = async () => {
     // 2) Render recipe
     RecipeView.render(model.state.recipe);
   } catch (err) {
-    console.log(err);
+    recipeView.renderError();
   }
 };
 
-showRecipe();
+const init = () => {
+  recipeView.addHandlerRender(showRecipe);
+};
+init();
 
-['hashchange', 'load'].forEach(event => {
-  window.addEventListener(event, recipeView.render(model.state.recipe));
-});
+export default showRecipe;
