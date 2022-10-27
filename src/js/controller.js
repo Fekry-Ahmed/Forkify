@@ -1,5 +1,7 @@
 import * as model from './model';
 import RecipeView from './views/recipeView';
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
 
 import recipeView from './views/recipeView';
 
@@ -9,7 +11,8 @@ import recipeView from './views/recipeView';
 
 const showRecipe = async () => {
   try {
-    const id = window.location.hash.slice(1);
+    // const id = window.location.hash.slice(1);
+    const id = '5ed6604591c37cdc054bc886?';
 
     if (!id) return;
     RecipeView.renderSpinner();
